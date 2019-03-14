@@ -20,6 +20,10 @@ class Post extends Model
         return $this->belongsTo(User::class);
 
     }
+
+    public function getHumanReadableDateAttribute(){
+        return $this->created_at->toDayDateTimeString();
+    }
     public function sluggable()
     {
         return [

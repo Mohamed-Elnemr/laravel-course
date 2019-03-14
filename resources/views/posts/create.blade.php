@@ -11,7 +11,7 @@
     @endif
     <a href="{{route ('posts.index')}}" class="btn btn-primary">BacK</a>
 
-    <form action="{{route ('posts.store') }}" method="POST">
+    <form action="{{route ('posts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
@@ -29,7 +29,7 @@
                 @endforeach
             </select>
         </div>
-
+        <input type="file" name="logo" />
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Post\StorePostRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Post\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Post ;
@@ -29,7 +30,13 @@ class PostsController extends Controller
 
 
         Post::create(request()->all());
-
+//        dd($request->logo->getClientOriginalName());
+//        $request->logo->store('logos',$request->logo->getClientOriginalName());
+//        dd($request->files);
+//        Storage::disk('public')->put('file.txt', 'Contents');
+//        dd($request->file('logo')->getClientOriginalName());
+        $path = $request->file('logo')->storeAs('posts',$request->file('logo')->getClientOriginalName());
+//        dd($path);
         return redirect()->route('posts.index');
 
 

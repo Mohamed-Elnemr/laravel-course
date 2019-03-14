@@ -45,7 +45,7 @@
             <td>{{isset($post->user)?$post->user->name:"Not found"}}</td>
             <td>{{isset($post->user)?$post->user->email:"Not found"}}</td>
 
-            <td>{{($post->created_at)->format('d/m/Y')}}</td>
+            <td>{{$post->human_readable_date}}</td>
         </tr>
         {{--@endforeach--}}
 
