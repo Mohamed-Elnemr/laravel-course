@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Post\StorePostRequest;
+use App\Http\Requests\Post\UpdatePostRequest;
 use Illuminate\Http\Request;
 use App\Post ;
 use App\User;
@@ -54,9 +55,9 @@ class PostsController extends Controller
 
 
     }
-    public function update($post){
+    public function update(UpdatePostRequest $request,Post $post){
         $data=request()->all();
-        Post::where('id',$post)->update([
+        Post::find($post->id)->update([
             'title'=>$data['title'],
             'description'=>$data['description'],
         ]);
