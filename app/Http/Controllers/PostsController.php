@@ -26,13 +26,6 @@ class PostsController extends Controller
     }
     public function store(StorePostRequest $request){
 
-//        $request->validate([
-//            'title'=>'required |min:3',
-//            'description'=>'required',
-//        ],[
-//            'title.required'=>' ay haga',
-//            'title.min'=>'minimum required',
-//        ]);
 
         Post::create(request()->all());
 
@@ -47,11 +40,11 @@ class PostsController extends Controller
         ]);
     }
     public function show($post){
-        $posts=Post::find($post);
+        $post=Post::find($post);
 
 
         return view('posts.show',[
-            'post'=>$posts,
+            'post'=>$post,
             ]);
     }
 
