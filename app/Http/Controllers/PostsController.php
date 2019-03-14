@@ -56,6 +56,7 @@ class PostsController extends Controller
 
     }
     public function update(UpdatePostRequest $request,Post $post){
+
         $data=request()->all();
         Post::find($post->id)->update([
             'title'=>$data['title'],

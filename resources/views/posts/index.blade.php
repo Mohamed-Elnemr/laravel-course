@@ -10,6 +10,8 @@
         <th scope="col">index</th>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
+        <th scope="col">Slug</th>
+
         <th scope="col">Posted By</th>
         <th scope="col">Created At</th>
 
@@ -24,6 +26,8 @@
         <th>{{$index}}</th>
         <th scope="row">{{$post->id}}</th>
         <td>{{$post->title}}</td>
+        <td>{{$post->slug}}</td>
+
         <td>{{isset($post->user)?$post->user->name:"Not found" }}</td>
         <td>{{($post->created_at)->format('d/m/Y')}}</td>
 
