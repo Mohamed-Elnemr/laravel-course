@@ -26,6 +26,8 @@ class StorePostRequest extends FormRequest
         return [
                 'title'=>'required |min:3| unique:posts',
                 'description'=>'required | min:10',
+                'user_id'=>'exists:users,id'
+
 
         ];
     }
@@ -39,6 +41,8 @@ class StorePostRequest extends FormRequest
             'description.min'=>'minimum 10 charactersrequired',
 
             'description.required'=>'Description is required',
+            'user_id'=>'No valid User',
+
         ];
     }
 }

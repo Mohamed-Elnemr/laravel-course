@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="exampleInputPassword1">Description</label>
             <input type="text"name="description" value="{{ $post->description }} "class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title">
-            <input type="hidden" name="post_id" value="{{$post->id}}">
+            {{--<input type="hidden" name="post_id" value="{{$post->id}}">--}}
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Post Creator</label>
