@@ -13,7 +13,8 @@ class PostsController extends Controller
 {
     public function index(){
 
-
+//            $posts=Post::all();
+//            dd($posts[38]);
             return view ('posts.index',[
                 'posts'=>Post::paginate(2)
             ]);
@@ -28,14 +29,18 @@ class PostsController extends Controller
     }
     public function store(StorePostRequest $request){
 
+//        dd(request()->all());
+        $path=$request->file('logo')->storeAs('posts',$request->file('logo')->getClientOriginalName());
 
         Post::create(request()->all());
+//        Post::create($request->file('logo')->storeAs('posts',$request->file('logo')));
+
 //        dd($request->logo->getClientOriginalName());
 //        $request->logo->store('logos',$request->logo->getClientOriginalName());
 //        dd($request->files);
 //        Storage::disk('public')->put('file.txt', 'Contents');
 //        dd($request->file('logo')->getClientOriginalName());
-        $path = $request->file('logo')->storeAs('posts',$request->file('logo')->getClientOriginalName());
+//        $path =
 //        dd($path);
         return redirect()->route('posts.index');
 

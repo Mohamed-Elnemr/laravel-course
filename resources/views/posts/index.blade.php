@@ -14,6 +14,9 @@
 
         <th scope="col">Posted By</th>
         <th scope="col">Created At</th>
+        <th scope="col">Image</th>
+
+
 
 
         <th scope="col">Action</th>
@@ -30,6 +33,8 @@
 
         <td>{{isset($post->user)?$post->user->name:"Not found" }}</td>
         <td>{{($post->created_at)->format('d/m/Y')}}</td>
+        <td><img src="{{storage_path("posts/6.jpg") }}"></td>
+
 
         <td>
             <a href="{{route('posts.show',$post->id)}}" class="btn btn-primary">Show posts</a>
