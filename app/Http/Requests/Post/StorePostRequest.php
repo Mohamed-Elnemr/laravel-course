@@ -38,7 +38,7 @@ class StorePostRequest extends FormRequest
             'title.min'=>' Minimum 3 charatcters are required',
             'title.unique'=>' Title Must be unique',
 
-            'description.min'=>'minimum 10 charactersrequired',
+            'description.min'=>'minimum 10 characters required',
 
             'description.required'=>'Description is required',
             'user_id'=>'No valid User',
