@@ -12,4 +12,9 @@ class PostsController extends Controller
     public function index(){
         return PostResource::collection(Post::all());
     }
+
+    public function show(){
+
+    }
+
 }
