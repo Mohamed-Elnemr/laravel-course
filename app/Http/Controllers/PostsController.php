@@ -28,20 +28,14 @@ class PostsController extends Controller
         ]);
     }
     public function store(StorePostRequest $request){
+        Storage::putFile('posts', $request->file('logo'));
+        Post::create([
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'user_id'=>$request->user_id,
+            'file_upload'=>$request->file('logo')->hashName(),
 
-//        dd(request()->all());
-        $path=$request->file('logo')->storeAs('posts',$request->file('logo')->getClientOriginalName());
-
-        Post::create(request()->all());
-//        Post::create($request->file('logo')->storeAs('posts',$request->file('logo')));
-
-//        dd($request->logo->getClientOriginalName());
-//        $request->logo->store('logos',$request->logo->getClientOriginalName());
-//        dd($request->files);
-//        Storage::disk('public')->put('file.txt', 'Contents');
-//        dd($request->file('logo')->getClientOriginalName());
-//        $path =
-//        dd($path);
+        ]);
         return redirect()->route('posts.index');
 
 

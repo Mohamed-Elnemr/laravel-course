@@ -33,7 +33,7 @@
 
         <td>{{isset($post->user)?$post->user->name:"Not found" }}</td>
         <td>{{($post->created_at)->format('d/m/Y')}}</td>
-        <td><img src="{{storage_path("posts/6.jpg") }}"></td>
+        <td><img src="{{Storage::url('/posts/'.$post->file_upload) }}" width="200" height="200" alt=""></td>
 
 
         <td>
